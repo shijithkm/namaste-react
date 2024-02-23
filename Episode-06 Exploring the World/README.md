@@ -28,3 +28,6 @@
 # Optional Chaining 
   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+# Spinner or Shimmer UI ?
+https://codepen.io/andru255/pen/wvBdxbb
