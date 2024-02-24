@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
+  console.log("Body Rendered");
+
   const [restaurants, setRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
     console.log("useEffect Called");
     fetchData();
@@ -31,19 +35,38 @@ const Body = () => {
         }
       );
 
-    console.log(formatedData);  
+    console.log(formatedData);
     setRestaurants(formatedData);
+    setFilteredRestaurants(formatedData);
   };
 
-  if(restaurants.length === 0){
-    return <Shimmer/>
-  }
-
-  console.log("body rendered");
-
-  return (
+  return restaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurants = restaurants.filter((restaurant) => {
+                return restaurant.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setFilteredRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -64,7 +87,7 @@ const Body = () => {
         </button>
       </div>
       <div className="card-container">
-        {restaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <Card key={restaurant.id} data={restaurant} />
         ))}
       </div>

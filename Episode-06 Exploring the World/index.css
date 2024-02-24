@@ -48,7 +48,6 @@
 }
 
 .filter-btn {
-  padding: 5px;
   margin: 10px;
   cursor: pointer;
 }
@@ -61,6 +60,14 @@
   width: 200px;
   height: 400px;
   margin: 5px;
-  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
   animation-timing-function: linear;
+}
+
+.login-btn {
+  width: 100px;
+}
+
+.filter {
+  display: flex;
 }
