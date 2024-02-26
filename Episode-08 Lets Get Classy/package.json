@@ -1,0 +1,36 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React tutorial ",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shijithkm/namaste-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Shijith Mohanan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shijithkm/namaste-react/issues"
+  },
+  "homepage": "https://github.com/shijithkm/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "npx": "^10.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1"
+  },
+  "browserslist": [
+    "last 10 versions"
+  ]
+}
